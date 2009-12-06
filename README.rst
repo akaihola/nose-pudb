@@ -39,37 +39,37 @@ Install
 
 You can get nose-pudb with
 `easy_install <http://peak.telecommunity.com/DevCenter/EasyInstall>`_ ::
-    
+
     $ easy_install nose-pudb
 
 Or you can clone the source using `git <http://git-scm.com/>`_ from
 http://github.com/akaihola/nose-pudb.git and install it with ::
-    
+
     $ python setup.py develop
 
 Usage
 -----
 
 To run nose tests and drop into pudb on errors, type::
-    
+
     $ nosetests --pudb
 
 To drop into pudb on failures, type::
-    
+
     $ nosetests --pudb-failures
 
 Contributing
 ============
 
-Please submit 
-`bugs and patches <http://github.com/akaihoa/nose-pudb/issues>`_.  
+Please submit
+`bugs and patches <http://github.com/akaihola/nose-pudb/issues>`_.
 All contributors will be acknowledged.  Thanks!
 
 Changelog
 =========
 
 - 0.1
- 
+
   - Initial release
 
 To Do
