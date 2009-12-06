@@ -43,7 +43,7 @@ setup(
         'Operating System :: Unix',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
-        'Topic :: Software Development :: Testing'
+        'Topic :: Software Development :: Testing',
         'Topic :: Software Development :: Debuggers',
         ],
 )
