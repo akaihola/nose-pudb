@@ -13,7 +13,12 @@ assert version
 
 setup(
     name='nose-pudb',
+    author='Antti Kaihola',
+    author_email='akaihol+python@ambitone.com',
+    maintainer='Antti Kaihola',
+    maintainer_email='akaihol+python@ambitone.com',
     version=version,
+    url='http://github.com/akaihola/nose-pudb',
     description=('A Nose plugin for dropping the test runner into pdb '
                  'when it encounters an error.'),
     long_description=file('README.rst').read(),
