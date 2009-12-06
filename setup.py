@@ -22,6 +22,8 @@ setup(
     description=('A Nose plugin for dropping the test runner into pdb '
                  'when it encounters an error.'),
     long_description=file('README.rst').read(),
+    keywords = ('test unittest doctest automatic discovery nose plugin '
+                'debugger pudb'),
     zip_safe=False,
     packages=find_packages(),
     include_package_data=True,
