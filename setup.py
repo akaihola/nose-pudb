@@ -34,11 +34,16 @@ setup(
     """,
     classifiers = [
         'Development Status :: 4 - Beta',
+        'Environment :: Console',
+        'Environment :: Console :: Curses',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)',
         'Natural Language :: English',
-        'Operating System :: OS Independent',
+        'Operating System :: POSIX',
+        'Operating System :: Unix',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
         'Topic :: Software Development :: Testing'
+        'Topic :: Software Development :: Debuggers',
         ],
 )
