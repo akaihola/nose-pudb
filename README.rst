@@ -65,6 +65,13 @@ Please submit
 `bugs and patches <http://github.com/akaihola/nose-pudb/issues>`_.
 All contributors will be acknowledged.  Thanks!
 
+License
+=======
+
+The plugin is released under the GNU Lesser General Public license
+(LGPL).  See the file ``LICENSE`` for details.
+
+
 Changelog
 =========
 
