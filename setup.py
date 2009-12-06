@@ -22,5 +22,14 @@ setup(
     entry_points="""
     [nose.plugins.0.10]
     nosepudb = nosepudb:Pudb
-    """
+    """,
+    classifiers = [
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)',
+        'Natural Language :: English',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Topic :: Software Development :: Testing'
+        ],
 )
