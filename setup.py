@@ -1,6 +1,6 @@
 import ez_setup
 ez_setup.use_setuptools()
-from setuptools import setup, find_packages
+from setuptools import setup
 import re
 version = None
 for line in open("./nosepudb/__init__.py"):
@@ -25,8 +25,8 @@ setup(
     keywords = ('test unittest doctest automatic discovery nose plugin '
                 'debugger pudb'),
     zip_safe=False,
-    packages=find_packages(),
-    include_package_data=True,
+    packages=['nosepudb'],
+    package_data={'': ['README.rst', 'LICENSE']},
     install_requires=['nose', 'pudb'],
     entry_points="""
     [nose.plugins.0.10]
