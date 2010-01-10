@@ -26,7 +26,6 @@ setup(
                 'debugger pudb'),
     zip_safe=False,
     packages=['nosepudb'],
-    package_data={'': ['README.rst', 'LICENSE']},
     install_requires=['nose', 'pudb'],
     entry_points="""
     [nose.plugins.0.10]
