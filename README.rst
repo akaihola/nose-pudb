@@ -79,6 +79,16 @@ Changelog
 
   - Initial release
 
+- 0.1.1
+
+  - License added
+  - Documentation fixes
+  - Setup script fixes
+
+- 0.1.2
+
+  - Setup script fix: include readme and license in the distribution
+
 To Do
 =====
 
