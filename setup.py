@@ -1,48 +1,41 @@
-import ez_setup
-ez_setup.use_setuptools()
-from setuptools import setup
-import re
-version = None
-for line in open("./nosepudb/__init__.py"):
-    m = re.search("__version__\s+=\s+(.*)", line)
-    if m:
-        version = m.group(1).strip()[1:-1] # quotes
-        break
-assert version
+#!/usr/bin/env python
 
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 setup(
     name='nose-pudb',
     author='Antti Kaihola',
-    author_email='akaihol+python@ambitone.com',
-    maintainer='Antti Kaihola',
-    maintainer_email='akaihol+python@ambitone.com',
-    version=version,
-    url='http://github.com/akaihola/nose-pudb',
-    description=('A Nose plugin for dropping the test runner into pdb '
-                 'when it encounters an error.'),
-    long_description=file('README.rst').read(),
-    keywords = ('test unittest doctest automatic discovery nose plugin '
-                'debugger pudb'),
-    zip_safe=False,
-    packages=['nosepudb'],
+    maintainer='Antoine Dechaume',
+    version=open('VERSION').read().strip(),
+    url='https://github.com/AntoineD/nose-pudb',
+    download_url='https://pypi.python.org/pypi/nose-pudb',
+    py_modules=['nose_pudb'],
     install_requires=['nose', 'pudb'],
-    entry_points="""
-    [nose.plugins.0.10]
-    nosepudb = nosepudb:Pudb
-    """,
-    classifiers = [
-        'Development Status :: 4 - Beta',
-        'Environment :: Console',
-        'Environment :: Console :: Curses',
+    entry_points={
+        'nose.plugins.0.10': [
+            'nose_pudb=nose_pudb:Pudb'
+        ]
+    },
+    description='A nose plugin for dropping into pudb on test errors or failures.',
+    long_description=open('README.rst').read(),
+    keywords='test unittest nose plugin debugger pudb',
+    platforms=['POSIX'],
+    license='GNU Library or Lesser General Public License (LGPL)',
+    classifiers=[
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)',
         'Natural Language :: English',
-        'Operating System :: POSIX',
-        'Operating System :: Unix',
+        'Environment :: Plugins',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
         'Topic :: Software Development :: Testing',
         'Topic :: Software Development :: Debuggers',
-        ],
+    ],
 )

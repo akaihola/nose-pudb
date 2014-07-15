@@ -1,95 +1,59 @@
-=====================================================================
- nose-pudb -- pudb integration for the nose Python testing framework
-=====================================================================
+====================================================================
+ nose-pudb -- pudb integration for the nose python testing framework
+====================================================================
 
-The nose-pudb plugin provides integration between the `Nose`_ testing
-framework and the `pudb`_ console-based visual debugger.  Instead of
-collecting and displaying test results, the test runner can drop into
-the debugger on errors and/or test failures.
+.. image:: https://travis-ci.org/AntoineD/nose-pudb.png?branch=master
+    :target: https://travis-ci.org/AntoineD/nose-pudb
 
-This is similar to Nose's built-in Debug plugin which uses the pdb
-debugger from the Python standard library.
+The nose-pudb plugin provides the integration between the `nose <https://nose.readthedocs.org>`_ testing framework and the `pudb <http://pypi.python.org/pypi/pudb>`_ console-based visual debugger.
+Instead of collecting and displaying the test results, the test runner can drop into the debugger on test errors and/or failures.
 
-.. contents::
+This is similar to the nose's built-in `pdb <https://nose.readthedocs.org/en/latest/plugins/debug.html>`_ plugin which uses the debugger from the python standard library.
 
-Overview
-========
+Please submit bugs and patches on https://github.com/AntoineD/nose-pudb/issues.
 
-The plugin provides ``--pudb`` and ``--pudb-failures`` options. The
-``--pudb`` option will drop the test runner into `pudb`_ when it
-encounters an error. To drop into pudb on failure, use
-``--pudb-failures``.
+This plugin has been originally developed by `Antti Kaihola <https://github.com/akaihola>`_.
 
-.. _Nose: http://www.somethingaboutorange.com/mrl/projects/nose/
-.. _pudb: http://pypi.python.org/pypi/pudb
+Installation
+============
 
-A `script`_ introduced in the pudb wiki provides a simple way to drop
-into pudb instead of pdb when running nose tests.  However, when using
-that script, pudb fails to show information about the exception object
-along with the traceback when hitting the 'e' key.
+Install nose-pudb using pip::
 
-This plugin passes the exception type and value to pudb's
-``post_mortem()`` function so that they are displayed with the
-traceback.
+    $ pip nose-pudb
 
-.. _script: http://wiki.tiker.net/PuDB/NoseWrapper
+Or you can clone the source using `git <http://git-scm.com/>`_ from http://github.com/AntoineD/nose-pudb.git and install it with::
 
-Install
-=======
-
-You can get nose-pudb with
-`easy_install <http://peak.telecommunity.com/DevCenter/EasyInstall>`_ ::
-
-    $ easy_install nose-pudb
-
-Or you can clone the source using `git <http://git-scm.com/>`_ from
-http://github.com/akaihola/nose-pudb.git and install it with ::
-
-    $ python setup.py develop
+    $ python setup.py install
 
 Usage
------
+=====
 
-To run nose tests and drop into pudb on errors, type::
+To run nose and drop into pudb on test failures and errors, use::
 
     $ nosetests --pudb
 
-To drop into pudb on failures, type::
+or set the environment variable ``NOSE_PUDB``::
+
+    $ NOSE_PUDB=1 nosetests
+
+To drop into pudb on failures, use::
 
     $ nosetests --pudb-failures
 
-Contributing
-============
+or set the environment variable ``NOSE_PUDB_FAILURES``::
 
-Please submit
-`bugs and patches <http://github.com/akaihola/nose-pudb/issues>`_.
-All contributors will be acknowledged.  Thanks!
+    $ NOSE_PUDB_FAILURES=1 nosetests
+
+To drop into pudb on errors, use::
+
+    $ nosetests --pudb-errors
+
+or set the environment variable ``NOSE_PUDB_ERRORS``::
+
+    $ NOSE_PUDB_ERRORS=1 nosetests
 
 License
 =======
 
-The plugin is released under the GNU Lesser General Public license
-(LGPL).  See the file ``LICENSE`` for details.
-
-
-Changelog
-=========
-
-- 0.1
-
-  - Initial release
-
-- 0.1.1
-
-  - License added
-  - Documentation fixes
-  - Setup script fixes
-
-- 0.1.2
-
-  - Setup script fix: include readme and license in the distribution
-
-To Do
-=====
-
-- nothing at this point
+This plugin is released under the GNU Lesser General Public license (LGPL).
+See the file ``LICENSE`` for details.
